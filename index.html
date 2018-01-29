@@ -10,13 +10,22 @@
 	
 	<!--Include helper script for skybox-->
 	<script src="libs/sky.js"></script>
+	
 </head>
 <body>
-
+	<!--Inlude helper script to position the sun-->
+	<script src="utils/sunSetter.js"></script>
+	
 <!--Create a scene-->
 <a-scene>
-    <!--Load the sky-->
+
+    <!--Load the sky and bind the sunSetter to it-->
 	<a-entity id="sky" geometry="primitive: sphere; radius: 100;" material="shader: sky; side: back" sun-position-setter>
+		<!--Position the sun-->
+		<a-entity id="orbit">
+			<a-animation attribute="rotation" from="0 0 0" to="0 90 0" dur="333" repeat="1"></a-animation>
+		</a-entity>
+	</a-entity>
 	
 	<!--Position an entity to house the camera-->
     <a-entity position="0 0 0">
