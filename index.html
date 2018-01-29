@@ -2,13 +2,19 @@
 <head>
 	<!--Include a-frame-->
     <script src="libs/aframe.min.js"></script>
+	
+	<!--Include helper script for skybox-->
+	<script src="libs/sky.js"></script>
 </head>
 <body>
 
 <!--Create a scene-->
 <a-scene>
-    <!--Position an entity to house the camera-->
-    <a-entity position="54 1.5 12">
+    <!--Load the sky-->
+	<a-entity id="sky" geometry="primitive: sphere; radius: 100;" material="shader: sky; side: back" sun-position-setter>
+	
+	<!--Position an entity to house the camera-->
+    <a-entity position="0 0 0">
 		<!--Define a camera-->
         <a-camera universal-controls>
 			<!--Define a raycaster to track the position of the mouse (i.e. where the user is looking-->
@@ -16,6 +22,10 @@
                               radiusInner: 0.01; segmentsTheta: 32" material="color: #283644; shader: flat" position="0 0 -0.75"></a-entity>
         </a-camera>
     </a-entity>
+	
+	<!--Begin building the scene of home-->
+
+	
 </a-scene>
 
 </body>
