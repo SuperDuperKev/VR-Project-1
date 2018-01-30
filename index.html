@@ -36,7 +36,7 @@
 	<!--Position an entity to house the camera-->
     <a-entity position="0 0 0">
 		<!--Define a camera-->
-        <a-camera universal-controls>
+        <a-camera universal-controls wasd-controls="acceleration: 500">
 			<!--Define a raycaster to track the position of the mouse (i.e. where the user is looking-->
             <a-entity raycaster="far: 150; objects: .intersectable" cursor geometry="primitive: ring; radiusOuter: 0.015;
                               radiusInner: 0.01; segmentsTheta: 32" material="color: #283644; shader: flat" position="0 0 -0.75"></a-entity>
@@ -51,14 +51,29 @@
         material="src: #grid; repeat: 1000 1000; transparent: true;metalness:5; roughness:5;"></a-entity>
 	
 	<!--Wall frame of the home-->
-	<a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 110w" position="-80 6.5 5" rotation="0 90 0" material="shader: standard;
+	<!--shader: flat prevents the object
+		from being affected by lighting-->
+	<a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 80" position="-80 6.5 -10"	rotation="0 90 0" material="shader: flat;
 roughness: 1; src: #wall-texture; repeat: 1 1"></a-entity>
-	<a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 110" position="80 6.5 5" rotation="0 90 0" material="shader: standard;
+	<a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 80" position="80 6.5 -10" rotation="0 90 0" material="shader: flat;
 roughness: 1; src: #wall-texture; repeat: 1 1"></a-entity>
-	<a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 160" position="0 6.5 -50" rotation="0 0 0" material="shader: standard;
+	<a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 160" position="0 6.5 -50" rotation="0 0 0" material="shader: flat;
 roughness: 1; src: #wall-texture; repeat: 1 1"></a-entity>
-	<a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 160" position="0 6.5 30" rotation="0 0 0" material="shader: standard;
+	<a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 160" position="0 6.5 30" rotation="0 0 0" material="shader: flat;
 roughness: 1; src: #wall-texture; repeat: 1 1"></a-entity>
+
+	<!--Walls for the bedroom-->
+	<a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 15" position="-60 6.5 22"	rotation="0 90 0" material="shader: flat;
+roughness: 1; src: #wall-texture; repeat: 1 1"></a-entity>
+	<a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 15" position="-60 6.5 4"	rotation="0 90 0" material="shader: flat;
+roughness: 1; src: #wall-texture; repeat: 1 1"></a-entity>
+	<a-entity static-body geometry="primitive: box; depth: 1; height: 9; width: 4.5" position="-77.5 9 -3"	rotation="0 180 0" material="shader: flat;
+roughness: 1; src: #wall-texture; repeat: 1 1"></a-entity> <!--Door entry-->
+	<a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 15" position="-68 6.5 -3"	rotation="0 180 0" material="shader: flat;
+roughness: 1; src: #wall-texture; repeat: 1 1"></a-entity>
+	<a-entity static-body geometry="primitive: box; depth: 1; height: 9; width: 3" position="-60 9 13"	rotation="0 90 0" material="shader: flat;
+roughness: 1; src: #wall-texture; repeat: 1 1"></a-entity><!--Door entry-->
+
 </a-scene>
 
 </body>
