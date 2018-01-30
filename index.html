@@ -22,6 +22,7 @@
 	<!--Load assets for speed-->
 	<a-assets>
 		<img src="textures/grid.png" id="grid" crossorigin="anonymous">
+		<img src="textures/wall-texture.jpeg" id="wall-texture" crossorigin="anonymous">
 	</a-assets>
 	
     <!--Load the sky and bind the sunSetter to it-->
@@ -44,11 +45,20 @@
 	
 	<!--Begin building the scene of home-->
 	
-	<!--Floor-->
+	<!--Floor defined with metalness and roughness for a cool effect-->
       <a-entity
         geometry="primitive: plane; width: 1000; height: 1000;" rotation="-90 0 0"
         material="src: #grid; repeat: 1000 1000; transparent: true;metalness:5; roughness:5;"></a-entity>
 	
+	<!--Wall frame of the home-->
+	<a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 110" position="-80 6.5 5" rotation="0 90 0" material="shader: standard;
+roughness: 1; src: #wall-texture; repeat: 1 1"></a-entity>
+	<a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 110" position="80 6.5 5" rotation="0 90 0" material="shader: standard;
+roughness: 1; src: #wall-texture; repeat: 1 1"></a-entity>w
+	<a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 160" position="0 6.5 -50" rotation="0 0 0" material="shader: standard;
+roughness: 1; src: #wall-texture; repeat: 1 1"></a-entity>
+	<a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 160" position="0 6.5 30" rotation="0 0 0" material="shader: standard;
+roughness: 1; src: #wall-texture; repeat: 1 1"></a-entity>
 </a-scene>
 
 </body>
