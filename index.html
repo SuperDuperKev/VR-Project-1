@@ -23,6 +23,7 @@
 	<a-assets>
 		<img src="textures/grid.png" id="grid" crossorigin="anonymous">
 		<img src="textures/wall-texture.jpg" id="wall-texture" crossorigin="anonymous">
+		<a-asset-item id="bed" src="models/scene.gltf">
 	</a-assets>
 	
     <!--Load the sky and bind the sunSetter to it-->
@@ -72,8 +73,10 @@ roughness: 1; src: #wall-texture; repeat: 1 1"></a-entity> <!--Door entry-->
 	<a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 15" position="-68 6.5 -3"	rotation="0 180 0" material="shader: flat;
 roughness: 1; src: #wall-texture; repeat: 1 1"></a-entity>
 	<a-entity static-body geometry="primitive: box; depth: 1; height: 9; width: 3" position="-60 9 13"	rotation="0 90 0" material="shader: flat;
-roughness: 1; src: #wall-texture; repeat: 1 1"></a-entity><!--Door entry-->
-
+roughness: 1; src: #wall-texture; repeat: 1 1"></a-entity> <!--Door entry-->
+	
+	<!--Models for the bedroom-->
+	<a-entity gltf-model="#bed" position="-68 0 9" rotation="0 90 0" scale=".06 .06 .06"></a-entity>
 </a-scene>
 
 </body>
