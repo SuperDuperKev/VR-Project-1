@@ -18,12 +18,17 @@
 	
 <!--Create a scene-->
 <a-scene>
-
+	
+	<!--Load assets for speed-->
+	<a-assets>
+		<img src="textures/grid.png" id="grid" crossorigin="anonymous">
+	</a-assets>
+	
     <!--Load the sky and bind the sunSetter to it-->
 	<a-entity id="sky" geometry="primitive: sphere; radius: 100;" material="shader: sky; side: back" sun-position-setter>
 		<!--Position the sun-->
 		<a-entity id="orbit">
-			<a-animation attribute="rotation" from="0 0 0" to="0 90 0" dur="333" repeat="1"></a-animation>
+			<a-animation attribute="rotation" from="0 0 0" to="0 90 0" dur="1" repeat="1"></a-animation>
 		</a-entity>
 	</a-entity>
 	
@@ -38,7 +43,11 @@
     </a-entity>
 	
 	<!--Begin building the scene of home-->
-
+	
+	<!--Floor-->
+      <a-entity
+        geometry="primitive: plane; width: 1000; height: 1000;" rotation="-90 0 0"
+        material="src: #grid; repeat: 1000 1000; transparent: true;metalness:5; roughness:5;"></a-entity>
 	
 </a-scene>
 
