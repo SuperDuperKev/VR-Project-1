@@ -22,11 +22,11 @@
 	<!--Load assets for speed-->
 	<a-assets>
 		<img src="textures/grid.png" id="grid" crossorigin="anonymous">
-		<img src="textures/wall-texture.jpeg" id="wall-texture" crossorigin="anonymous">
+		<img src="textures/wall-texture.jpg" id="wall-texture" crossorigin="anonymous">
 	</a-assets>
 	
     <!--Load the sky and bind the sunSetter to it-->
-	<a-entity id="sky" geometry="primitive: sphere; radius: 100;" material="shader: sky; side: back" sun-position-setter>
+	<a-entity id="sky" geometry="primitive: sphere; radius: 200;" material="shader: sky; side: back" sun-position-setter>
 		<!--Position the sun-->
 		<a-entity id="orbit">
 			<a-animation attribute="rotation" from="0 0 0" to="0 90 0" dur="1" repeat="1"></a-animation>
@@ -51,10 +51,10 @@
         material="src: #grid; repeat: 1000 1000; transparent: true;metalness:5; roughness:5;"></a-entity>
 	
 	<!--Wall frame of the home-->
-	<a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 110" position="-80 6.5 5" rotation="0 90 0" material="shader: standard;
+	<a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 110w" position="-80 6.5 5" rotation="0 90 0" material="shader: standard;
 roughness: 1; src: #wall-texture; repeat: 1 1"></a-entity>
 	<a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 110" position="80 6.5 5" rotation="0 90 0" material="shader: standard;
-roughness: 1; src: #wall-texture; repeat: 1 1"></a-entity>w
+roughness: 1; src: #wall-texture; repeat: 1 1"></a-entity>
 	<a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 160" position="0 6.5 -50" rotation="0 0 0" material="shader: standard;
 roughness: 1; src: #wall-texture; repeat: 1 1"></a-entity>
 	<a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 160" position="0 6.5 30" rotation="0 0 0" material="shader: standard;
