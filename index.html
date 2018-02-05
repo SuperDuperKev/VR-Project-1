@@ -8,8 +8,8 @@
 	<!--Include a-frame-->
     <script src="libs/aframe.min.js"></script>
 	
-	<!--Include physics plugin-->
-	<script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v2.1.1/dist/aframe-physics-system.min.js"></script>
+	<!--Include a-frame extras plugin-->
+	<script src="http://cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
 	
 	<!--Include helper script for skybox-->
 	<script src="libs/sky.js"></script>
@@ -21,12 +21,14 @@
 	
 <!--Create a scene-->
 <a-scene physics="gravity: -10">
-	
+
 	<!--Load assets early-->
 	<a-assets>
 		<img src="images/grid.png" id="grid" crossorigin="anonymous">
+		<img src="images/floor.jpg" id="floor" crossorigin="anonymous">
+		<img src="images/ceiling.jpg" id="ceiling" crossorigin="anonymous">
 		<img src="images/wall-texture.jpg" id="wall-texture" crossorigin="anonymous">
-		<a-asset-item id="bed" src="models/scene.gltf">
+		<a-asset-item id="bed" src="models/bed/scene.gltf">
 		<a-asset-item id="dog" src="models/dog/scene.gltf">
 	</a-assets>
 	
@@ -39,7 +41,8 @@
 	</a-entity>
 	
 	<!--Position an entity to house the camera-->
-    <a-entity position="0 0 0">
+	<!--Anything classed as a wall will be affected by reset-on-collision-->
+    <a-entity position="32 0 4" rotation="0 90 0">
 		<!--Define a camera-->
         <a-camera universal-controls wasd-controls="acceleration: 500">
 			<!--Define a raycaster to track the position of the mouse (i.e. where the user is looking-->
@@ -49,13 +52,16 @@
     </a-entity>
 	
 	<!--Plane to prevent physics objects from falling through the map-->
-	<a-plane static-body position="0 0 0" rotation="-90 0 0" width="80" height="160" depth="1" material="src: #grid; repeat: 100 100; transparent: true; metalness:5; roughness:5;"></a-plane>
+	<a-plane static-body position="0 0 0" rotation="-90 0 0" width="100" height="100" depth="1" material="src: #grid; repeat: 100 100; transparent: true; metalness:5; roughness:5;"></a-plane>
+	
 	
 	<!--Begin building the scene of home-->
+	<!-- Floor and ceiling -->
+	<a-plane id="floor" material="src: #floor; side: double; repeat: 20 20" height="50" width="50" position="0 .1 0" rotation="-90 0 0"></a-plane>
+	<a-plane id="floor" material="src: #ceiling; side: double; repeat: 10 10" height="50" width="50" position="0 13s 0" rotation="-90 0 0"></a-plane>
 	
 	<!--Models for the bedroom-->
-	<a-entity gltf-model="#bed" position="-68 0 9" rotation="0 90 0" scale=".06 .06 .06"></a-entity>
+	<a-entity gltf-model="#bed" position="-17 0 20" rotation="0 90 0" scale=".06 .06 .06"></a-entity>
 </a-scene>
-
 </body>
 </html>
