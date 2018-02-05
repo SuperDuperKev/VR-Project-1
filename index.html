@@ -28,6 +28,7 @@
 		<img src="images/grid.png" id="grid" crossorigin="anonymous">
 		<img src="images/floor.jpg" id="floor" crossorigin="anonymous">
 		<img src="images/ceiling.jpg" id="ceiling" crossorigin="anonymous">
+		<img src="images/grass.jpg" id="grass" crossorigin="anonymous">
 		<img src="images/wall-texture.jpg" id="wall-texture" crossorigin="anonymous">
 		<a-asset-item id="bed" src="models/bed/scene.gltf">
 		<a-asset-item id="dog" src="models/dog/scene.gltf">
@@ -56,7 +57,7 @@
 	<a-entity gltf-model="#tree" position="8 0 40" rotation="0 90 0" scale=".05 .05 .05"></a-entity>
 	
 	<!--Plane to prevent physics objects from falling through the map-->
-	<a-plane static-body position="0 0 0" rotation="-90 0 0" width="100" height="100" depth="1" material="src: #grid; repeat: 100 100; transparent: true; metalness:5; roughness:5;"></a-plane>	
+	<a-plane static-body position="0 0 0" rotation="-90 0 0" width="100" height="100" depth="1" material="src: #grass; side: double; repeat: 100 100;"></a-plane>	
 	
 	<!--Begin building the scene of home-->
 	<!-- Floor and ceiling-->
@@ -66,12 +67,12 @@
 	<!--Walls that cannot be walked through-->
 	<a-box color="#39BB82"
              width="15" height="15" depth="1"
-             position="-0.40 6.427 -25"
+             position=".255 5.954 -24.8"
 			 scale="3.3 .928 .497"
              static-body></a-box>
     <a-box color="#39BB82"
              width="15" height="15" depth="1"
-             position="-0.40 6.427 25"
+             position=".255 5.954 24.8"
 			 scale="3.3 .928 .497"
              static-body></a-box>
 			 
