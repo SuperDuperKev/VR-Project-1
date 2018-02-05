@@ -20,7 +20,8 @@
 	<script src="utils/sunSetter.js"></script>
 	
 <!--Create a scene-->
-<a-scene physics="gravity: -10">
+<!--Running off of the map causes you to float away-->
+<a-scene physics="gravity: 10">
 
 	<!--Load assets early-->
 	<a-assets>
@@ -43,7 +44,7 @@
 	
 	<!--Position an entity to house the camera-->
 	<!--kinematic-body is not compatible with "acceleration"-->
-	<a-entity position="32 0 4" camera="userHeight: 1.6" universal-controls kinematic-body wasd-controls="acceleration: 500">
+	<a-entity position="32 0 4" camera="userHeight: 1.6" universal-controls kinematic-body>
 		<!--Define a raycaster to track the position of the mouse (i.e. where the user is looking-->
 		<a-entity raycaster="far: 150; objects: .intersectable" cursor geometry="primitive: ring; radiusOuter: 0.015;
 						  radiusInner: 0.01; segmentsTheta: 32" material="color: #283644; shader: flat" position="0 0 -0.75"></a-entity>
@@ -59,17 +60,19 @@
 	
 	<!--Begin building the scene of home-->
 	<!-- Floor and ceiling-->
-	<a-plane id="floor" material="src: #floor; side: double; repeat: 20 20" height="50" width="50" position="0 .1 0" rotation="-90 0 0"></a-plane>
-	<a-plane id="floor" material="src: #ceiling; side: double; repeat: 10 10" height="50" width="50" position="0 13 0" rotation="-90 0 0"></a-plane>
+	<a-plane id="floor" material="src: #floor; side: double; repeat: 20 20" height="50" width="50" position="0 .01 0" rotation="-90 0 0"></a-plane>
+	<a-plane id="ceiling" material="src: #ceiling; side: double; repeat: 10 10" height="50" width="50" position="0 13 0" rotation="-90 0 0"></a-plane>
 	
 	<!--Walls that cannot be walked through-->
 	<a-box color="#39BB82"
-             width="15" height="5" depth="3"
-             position="8 2.5 -5"
+             width="15" height="15" depth="1"
+             position="-0.40 6.427 -25"
+			 scale="3.3 .928 .497"
              static-body></a-box>
-      <a-box color="#39BB82"
-             width="15" height="5" depth="3"
-             position="8 2.5 5"
+    <a-box color="#39BB82"
+             width="15" height="15" depth="1"
+             position="-0.40 6.427 25"
+			 scale="3.3 .928 .497"
              static-body></a-box>
 			 
 	<!--Models for the bedroom-->
