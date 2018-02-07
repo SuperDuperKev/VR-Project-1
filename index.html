@@ -65,7 +65,8 @@
 		<!-- Floor and ceiling-->
 		<a-plane id="floor" material="src: #floor; side: double; repeat: 20 20" height="50" width="50" position="0 .01 0" rotation="-90 0 0"></a-plane>
 		<a-plane id="ceiling" material="src: #wall; side: double; repeat: 1 1" height="50" width="50" position="0 13 0" rotation="-90 0 0"></a-plane>
-		<!--Walls that cannot be walked through-->
+		
+		<!--Walls that make up the perimeter of the house and cannot be walked through-->
 		<a-box material="src: #wall; side: double;"
 				 width="15" height="15" depth="1"
 				 position=".255 5.954 -24.8"
@@ -76,6 +77,21 @@
 				 position=".255 5.954 24.8"
 				 scale="3.3 .928 .497"
 				 static-body></a-box>
+		 <a-box material="src: #wall; side: double;"
+				 width="15" height="15" depth="1"
+				 position="-24.7 5.896 -0.21"
+				 rotation="0 90 0"
+				 scale="3.3 .928 .497"
+				 static-body></a-box>
+				 
+		 <!--Walls that make up the inner area of the house-->
+		 <a-box material="src: #wall; side: double;"
+				 width="7.5" height="15" depth="1"
+				 position=".255 5.954 12.11"
+				 rotation="0 90 0"
+				 scale="3.3 .928 .497"
+				 static-body></a-box>
+		 
 				 
 		<!--Models for the bedroom-->
 		<a-entity gltf-model="#bed" position="-17 0 20" rotation="0 90 0" scale=".06 .06 .06"></a-entity>
