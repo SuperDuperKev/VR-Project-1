@@ -675,10 +675,10 @@
   ],
   "images": [
     {
-      "uri": "textures/_Vegetation_Bark_Maple_1_baseColor.jpeg"
+      "uri": "textures/barkbaseColor.jpeg"
     },
     {
-      "uri": "textures/_40_baseColor.png"
+      "uri": "textures/baseColor.png"
     }
   ],
   "materials": [
