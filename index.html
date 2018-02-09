@@ -6,14 +6,17 @@
 	<meta name="author" content="Simon Woldemichael">
 	
 	<!--Include a-frame-->
-    <script src="libs/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+	
+	<!--Include resonance dependencies-->
+	<script src="https://cdn.jsdelivr.net/npm/resonance-audio/build/resonance-audio.min.js"></script>
+	<script src="libs/res-room.js"></script>
 	
 	<!--Include a-frame extras plugin-->
 	<script src="http://cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
 	
 	<!--Include helper script for skybox-->
 	<script src="libs/sky.js"></script>
-	
 </head>
 <body>
 	<!--Inlude helper script to position the sun-->
@@ -54,7 +57,7 @@
 		<a-entity raycaster="far: 150; objects: .intersectable" cursor geometry="primitive: ring; radiusOuter: 0.015;
 						  radiusInner: 0.01; segmentsTheta: 32" material="color: #283644; shader: flat" position="0 0 -0.75"></a-entity>
 	</a-entity>
-	
+		
 	<!--Sideyard swimming pool with wave generator-->
 	<a-ocean width="20" depth="10" density="40" position="0 .25 40"></a-ocean>
 	<!--Tree model-->
@@ -64,7 +67,7 @@
 	<a-plane static-body position="0 0 0" rotation="-90 0 0" width="100" height="100" depth="1" material="src: #grass; side: double; repeat: 100 100;"></a-plane>	
 	
 	<!--Begin building the scene of home-->
-	<a-entity>
+	<a-entity scale=".5 .5 .5">
 		<!-- Floor and ceiling-->
 		<a-plane id="floor" material="src: #floor; side: double; repeat: 20 20" height="50" width="50" position="0 .01 0" rotation="-90 0 0"></a-plane>
 		<a-plane id="ceiling" material="src: #wall; side: double; repeat: 1 1" height="50" width="50" position="0 13 0" rotation="-90 0 0"></a-plane>
@@ -86,6 +89,25 @@
 				 rotation="0 90 0"
 				 scale="3.3 .928 .497"
 				 static-body></a-box>
+		 <a-box material="src: #wall; side: double;"
+				 width="7.5" height="15" depth="1"
+				 position="24.78 5.966 15.570"
+				 rotation="0 90 0"
+				 scale="2.516 .928 .497"
+				 static-body></a-box>
+		 <a-box material="src: #wall; side: double;"
+				 width="7.5" height="15" depth="1"
+				 position="24.78 5.966 -15.570"
+				 rotation="0 90 0"
+				 scale="2.516 .928 .497"
+				 static-body></a-box>
+		<a-box material="src: #wall; side: double;"
+				 width="7.5" height="15" depth="1"
+				 position="24.78 9.628 0.040"
+				 rotation="0 90 0"
+				 scale="1.638 .437 .497"
+				 static-body></a-box>
+		 <!--Front door-->
 				 
 		 <!--Walls that make up the inner area of the house-->
 		 <a-box material="src: #wall; side: double;"
@@ -94,11 +116,36 @@
 				 rotation="0 90 0"
 				 scale="3.3 .928 .497"
 				 static-body></a-box>
+		 <a-box material="src: #wall; side: double;"
+				 width="7.5" height="15" depth="1"
+				 position="-9.03 5.966 -.10"
+				 rotation="0 0 0"
+				 scale="2.516 .928 .497"
+				 static-body></a-box>
+		 <a-box material="src: #wall; side: double;"
+				 width="7.5" height="15" depth="1"
+				 position="-21.4 10.02 -.10"
+				 rotation="0 0 0"
+				 scale=".8 .391 .392"
+				 static-body></a-box>
 		 
-				 
-		<!--Models for the bedroom-->
-		<a-entity gltf-model="#bed" position="-17 0 20" rotation="0 90 0" scale=".06 .06 .06"></a-entity>
+		 
+				
 	</a-entity>
+	
+	<a-resonance-room
+		src-position="0.85 1.5 -0.7"
+		src="audio/87.mp3"
+		loop="true",
+		autoplay="true",
+		width="4"
+		height="3"
+		depth="3.8"
+		helper="false"
+	><a-resonance-room>
+	
+	<!--Models for the bedroom-->
+		<a-entity gltf-model="#bed" position="-17 0 20" rotation="0 90 0" scale=".06 .06 .06"></a-entity>
 </a-scene>
 </body>
 </html>
