@@ -24,7 +24,7 @@
 	
 <!--Create a scene-->
 <!--Running off of the map causes you to float away-->
-<a-scene physics="gravity: 100; debug: false">
+<a-scene physics="gravity: 10; debug: false">
 
 	<!--Load assets early-->
 	<a-assets>
@@ -52,7 +52,7 @@
 	
 	<!--Position an entity to house the camera-->
 	<!--kinematic-body is not compatible with "acceleration"-->
-	<a-entity position="32 0 4" camera="userHeight: 1.6" universal-controls kinematic-body>
+	<a-entity position="21.22 0 -0.72" rotation="-15.8 98.66 0" camera="userHeight: 1.6" universal-controls kinematic-body>
 		<!--Define a raycaster to track the position of the mouse (i.e. where the user is looking-->
 		<a-entity raycaster="far: 150; objects: .intersectable" cursor geometry="primitive: ring; radiusOuter: 0.015;
 						  radiusInner: 0.01; segmentsTheta: 32" material="color: #283644; shader: flat" position="0 0 -0.75"></a-entity>
@@ -107,7 +107,6 @@
 				 rotation="0 90 0"
 				 scale="1.638 .437 .497"
 				 static-body></a-box>
-		 <!--Front door-->
 				 
 		 <!--Walls that make up the inner area of the house-->
 		 <a-box material="src: #wall; side: double;"
@@ -128,24 +127,13 @@
 				 rotation="0 0 0"
 				 scale=".8 .391 .392"
 				 static-body></a-box>
-		 
-		 
-				
 	</a-entity>
 	
-	<a-resonance-room
-		src-position="0.85 1.5 -0.7"
-		src="audio/87.mp3"
-		loop="true",
-		autoplay="true",
-		width="4"
-		height="3"
-		depth="3.8"
-		helper="false"
-	><a-resonance-room>
+	<!--Resonant body that plays positional sound!-->
+	<a-resonance-room src-position="-11.8 1.5 -11.4" src="audio/87.mp3" loop="true", autoplay="true", width="4" height="3" depth="3.8" helper="true"><a-resonance-room>
 	
 	<!--Models for the bedroom-->
-		<a-entity gltf-model="#bed" position="-17 0 20" rotation="0 90 0" scale=".06 .06 .06"></a-entity>
+	<a-entity gltf-model="#bed" position="-9.12 0 8.232" rotation="0 90 0" scale=".06 .06 .06"></a-entity>
 </a-scene>
 </body>
 </html>
