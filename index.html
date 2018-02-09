@@ -46,7 +46,7 @@
 	
 	<!--Position an entity to house the camera-->
 	<!--kinematic-body is not compatible with "acceleration"-->
-	<a-entity position="32 0 4" camera="userHeight: 1.6" universal-controls kinematic-body>
+	<a-entity position="32 0 4" camera="userHeight: 1.6" wasd-controls universal-controls kinematic-body>
 		<!--Define a raycaster to track the position of the mouse (i.e. where the user is looking-->
 		<a-entity raycaster="far: 150; objects: .intersectable" cursor geometry="primitive: ring; radiusOuter: 0.015;
 						  radiusInner: 0.01; segmentsTheta: 32" material="color: #283644; shader: flat" position="0 0 -0.75"></a-entity>
