@@ -24,7 +24,7 @@
 	
 <!--Create a scene-->
 <!--Running off of the map causes you to float away-->
-<a-scene physics="gravity: 10; debug: false">
+<a-scene stats physics="gravity: 10; debug: false">
 
 	<!--Load assets early-->
 	<a-assets>
@@ -133,13 +133,13 @@
 	</a-entity>
 	
 	<!--Resonant body that plays positional sound!-->
-	<a-resonance-room src-position="-11.8 1.5 -10.2" src="audio/87.mp3" loop="true", autoplay="true", width="4" height="3" depth="3.8" helper="true"><a-resonance-room>
+	<a-resonance-room src-position="-10.8 .956 -10.2" src="audio/87.mp3" loop="true", autoplay="true", width="4" height="3" depth="3.8" helper="true"><a-resonance-room>
 	
 	<!--Models for the inside of the house-->
 	<a-entity gltf-model="#bed" position="-9.12 0 8.232" rotation="0 90 0" scale=".06 .06 .06"></a-entity>
-	<a-entity gltf-model="#table" position="-1.48 0 10.01" rotation="0 90 0" scale=".024 .029 .029"></a-entity>
-	<a-entity gltf-model="#table" position="-10.9 0 -10.1" rotation="0 90 0" scale=".024 .029 .029"></a-entity>
-	<a-entity gltf-model="#computer" position="-1.48 1.6 10.01" rotation="0 270 0" scale=".001 .001 .001"></a-entity>
+	<a-entity gltf-model="#table" position="-1.48 0 10.01" rotation="0 90 0" scale=""></a-entity>
+	<a-entity gltf-model="#table" position="-10.9 0 -10.1" rotation="0 90 0" scale=""></a-entity>
+	<a-entity gltf-model="#computer" position="-1.48 1.333 10.01" rotation="0 270 0" scale=".001 .001 .001"></a-entity>
 	<a-entity gltf-model="#pool-table" position="-4.7 -1.5 1.643" rotation="0 90 0" scale=".024 .029 .029"></a-entity>
 </a-scene>
 </body>
