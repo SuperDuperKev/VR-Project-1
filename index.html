@@ -42,6 +42,8 @@
 			<a-asset-item id="pool-table" src="models/pool-table/scene.gltf">
 			<a-asset-item id="computer" src="models/computer/scene.gltf">
 			<a-asset-item id="radio" src="models/radio/scene.gltf">
+			<a-asset-item id="phone" src="models/phone/scene.gltf">
+			<a-asset-item id="camera-drone" src="models/camera-drone/scene.gltf">
 		</a-assets>
 		<!--The sky that exists outside of the sphere that houses a skybox-->
 		<a-sky src="#skyTex" repeat="1 1"></a-sky>
@@ -68,7 +70,7 @@
 		<!--Begin building the scene of home-->
 		<a-entity scale=".5 .5 .5">
 			<!-- Floor and ceiling-->
-			<a-plane id="floor" material="src: #floor; side: double; repeat: 20 20" height="50" width="50" position="0 .01 0" rotation="-90 0 0"></a-plane>
+			<a-plane id="floor" material="src: #floor; side: double; repeat: 1 1" height="50" width="50" position="0 .01 0" rotation="-90 0 0"></a-plane>
 			<a-plane id="ceiling" material="src: #wall; side: double; repeat: 1 1" height="50" width="50" position="0 13 0" rotation="-90 0 0"></a-plane>
 			
 			<!--Walls that make up the perimeter of the house and cannot be walked through-->
@@ -129,7 +131,7 @@
 		</a-entity>
 		
 		<!--Resonant body that plays positional sound!-->
-		<a-resonance-room src-position="-10.8 .956 -10.2" src="audio/87.mp3" loop="true", autoplay="true", width="4" height="3" depth="3.8" helper="true"><a-resonance-room>
+		<a-resonance-room src-position="-10.8 .956 -10.2" src="audio/87.mp3" loop="true", autoplay="true", width="4" height="3" depth="3.8" helper="false"><a-resonance-room>
 		
 		<!--Models for the inside of the house-->
 		<a-entity gltf-model="#bed" position="-9.12 0 8.232" rotation="0 90 0" scale=".06 .06 .06"></a-entity>
@@ -138,16 +140,15 @@
 		<a-entity gltf-model="#computer" position="-1.48 1.333 10.01" rotation="0 270 0" scale=".001 .001 .001"></a-entity>
 		<a-entity gltf-model="#pool-table" position="-4.7 -1.5 1.643" rotation="0 90 0" scale=".024 .029 .029"></a-entity>
 		<a-entity gltf-model="#radio" position="-11.2 .956 -9.7" rotation="0 -90 0" scale=".015 .015 .015"></a-entity>
+		<a-entity gltf-model="#phone" position="-1.48 .924 9.331" rotation="0 -33 0" scale=".05 .05 .05"></a-entity>
 		
 		<!--Models for the outside of the house-->
 		<!--Sideyard swimming pool with wave generator-->
 		<a-ocean width="20" depth="10" density="40" position="0 .25 40"></a-ocean>
-		<!--Tree model-->
+		
 		<a-entity gltf-model="#tree" position="8 0 40" rotation="0 90 0" scale=".05 .05 .05"></a-entity>
-		
-		<!--Dog model-->
 		<a-entity gltf-model="#dog" position="0 0 40" rotation="0 -90 0" scale=".0015 .0015 .0015"></a-entity>
-		
+		<a-entity gltf-model="#camera-drone" position="-12.1 1.014 17.87" rotation="0 0 0" scale=".01 .01 .01"></a-entity>
 	</a-scene>
 </body>
 </html>
