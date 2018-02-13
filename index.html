@@ -97,7 +97,7 @@
 		</a-entity>
 		
 		<!--Resonant body that plays positional sound!-->
-		<a-resonance-room src-position="-10.8 .956 -10.2" src="audio/87.mp3" loop="true", autoplay="true", width="4" height="3" depth="3.8" helper="false"><a-resonance-room>
+		<a-resonance-room src-position="-10.8 .956 -10.2" src="audio/87.mp3" loop="true", autoplay="true", width="4" height="3" depth="3.8" helper="false"></a-resonance-room>
 		<!--Put a bounding box around the audio player. Weird glitch where the user teleports off of the map without it-->
 		
 		<!--Models for the inside of the house-->
@@ -126,13 +126,28 @@
 		<a-entity gltf-model="#dog" position="0 0 40" rotation="0 270 0" scale=".0015 .0015 .0015">
 			<a-animation attribute="rotation" dur="1000" from="0 270 0" to = "0 -270 0" repeat="indefinite"></a-animation>
 		</a-entity>
-	
+		
 		<!--Setup lighting-->
 		<a-light type="directional" color="grey" position="-.5 1 1" angle="60" decay="1" intensity=".6" ></a-light>
-		<a-light type="ambient" color="grey" position="0 0 0" angle="60" decay="1" intensity="1" ></a-light>
+		<a-light id="main-light" type="ambient" color="grey" position="0 0 0" angle="60" decay="1" intensity="1"></a-light>
+		
+		<!--Function that is called when the light switch is pressed-->
+		<script>
+			function setLight(){
+				var light = document.querySelector('#main-light');
+				var current_color = light.getAttribute('color');
+				if (current_color == 'grey'){
+					light.setAttribute('color', 'white');
+				}
+				else{
+					light.setAttribute('color', 'grey');
+				}
+			}
+		</script>
 		
 		<!--Add light switch entity-->
-		<a-box material="src: #switch; side: double; repeat: 1 1" width="16" height="22" depth="1" position="12.26 1.8 -3.73" rotation="0 -90 0" scale=".024 .024 .024" static-body></a-box>
+		<a-box onclick="setLight()" material="src: #switch; side: double; repeat: 1 1" width="16" height="22" depth="1" position="12.26 1.8 -3.73" rotation="0 -90 0" scale=".024 .024 .024" static-body class="intersectable"></a-box>
+		
 		
 	</a-scene>
 </body>
