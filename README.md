@@ -39,6 +39,7 @@
 6) Add an animation to a model to make it a dynamic object
    - [Example 1](https://blog.prototypr.io/learning-a-frame-how-to-do-animations-2aac1ae461da)
    - [Example 2](https://aframe.io/docs/0.7.0/introduction/models.html)
+
 7) Add a water 'shader' to make up a swimming pool
    - [Example 1](https://webvr.donmccurdy.com/water/)
 
@@ -56,17 +57,21 @@
     - https://stackoverflow.com/questions/42087566/add-speed-to-wasd-controls-for-a-frame
     - https://stackoverflow.com/questions/41669122/how-do-i-copy-the-position-and-rotation-of-a-camera-child-a-frame-entity-to-use
 
-### Model sources
+### External model sources
   - Radio: https://sketchfab.com/models/e7172544d7984d3b8b7ac0cc6c9ae693
   - Table: https://sketchfab.com/models/28e73c5dd9674b349a0c7ba06fb34e1c
   - Phone: https://sketchfab.com/models/d77a5f2004004822b527edb8090fcbcf
   - Dog:  https://sketchfab.com/models/335f2250195c407bac91695fbdd193e1
-  - Camera: drone https://sketchfab.com/models/e255bba4880340ac9098ad28993803e0
+  - Camera drone: https://sketchfab.com/models/764eea3376134998bd49bb8e5f7d795e
   - Car: https://sketchfab.com/models/e6af23e051644eaabba1299709aa6f2b
   - Couch: https://sketchfab.com/models/0bbeae4fe59b4e44bed8d06f5cb415bf
   - CRT TV: https://sketchfab.com/models/5ab87913300f474a96b218b10c9ab3d4
   - GameCube: https://sketchfab.com/models/ff244730d22e4581a3f505201e63925e
   - Amazon Echo: https://sketchfab.com/models/d09319ec6c8245f2bc7f20d96a4f328a
+  - Tree: https://sketchfab.com/models/7016d1d32fe748f0a8b3f5eb39374bc4
+  - Pool table: https://sketchfab.com/models/625c012402074e91a1a534b771920a17
+  - Computer monitor: https://sketchfab.com/models/1cfebc1b09a54c0e96d87b7179237285
+  - Bed: https://sketchfab.com/models/86d5c8b1addf4f138d8f0c2cf06e9ba0
 
 ### Video demonstration
    - (Video embed here :soon:)
