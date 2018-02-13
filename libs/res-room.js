@@ -177,7 +177,7 @@ AFRAME.registerComponent('resonance-room', {
       _helperEl.setAttribute('segments-width', 14);
       _helperEl.setAttribute('segments-height', 6);
       _helperEl.setAttribute('wireframe', true);
-      _helperEl.setAttribute('color', 'blue');
+      _helperEl.setAttribute('color', 'red');
       _helperEl.setAttribute('position', this.data['src-position']);
       this.el.appendChild(_helperEl);
     }
