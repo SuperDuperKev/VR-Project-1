@@ -25,7 +25,7 @@
 	
 	<!--Create a scene-->
 	<!--Running off of the map causes you to float away-->
-	<a-scene stats physics="gravity: 10; debug: false">
+	<a-scene stats physics="gravity: -10; debug: false">
 
 		<!--Load assets early-->
 		<a-assets>
@@ -82,64 +82,22 @@
 			<a-plane id="ceiling" material="src: #wall; side: double; repeat: 1 1" height="50" width="50" position="0 13 0" rotation="-90 0 0"></a-plane>
 			
 			<!--Walls that make up the perimeter of the house and cannot be walked through-->
-			<a-box material="src: #wall; side: double;"
-					 width="15" height="15" depth="1"
-					 position=".255 5.954 -24.8"
-					 scale="3.3 .928 .497"
-					 static-body></a-box>
-			<a-box material="src: #wall; side: double;"
-					 width="15" height="15" depth="1"
-					 position=".255 5.954 24.8"
-					 scale="3.3 .928 .497"
-					 static-body></a-box>
-			 <a-box material="src: #wall; side: double;"
-					 width="15" height="15" depth="1"
-					 position="-24.7 5.896 -0.21"
-					 rotation="0 90 0"
-					 scale="3.3 .928 .497"
-					 static-body></a-box>
-			 <a-box material="src: #wall; side: double;"
-					 width="7.5" height="15" depth="1"
-					 position="24.78 5.966 15.570"
-					 rotation="0 90 0"
-					 scale="2.516 .928 .497"
-					 static-body></a-box>
-			 <a-box material="src: #wall; side: double;"
-					 width="7.5" height="15" depth="1"
-					 position="24.78 5.966 -15.570"
-					 rotation="0 90 0"
-					 scale="2.516 .928 .497"
-					 static-body></a-box>
-			<a-box material="src: #wall; side: double;"
-					 width="7.5" height="15" depth="1"
-					 position="24.78 9.628 0.040"
-					 rotation="0 90 0"
-					 scale="1.638 .437 .497"
-					 static-body></a-box>
+			<a-box material="src: #wall; side: double;" width="15" height="15" depth="1" position=".255 5.954 -24.8" scale="3.3 .928 .497" static-body></a-box>
+			<a-box material="src: #wall; side: double;" width="15" height="15" depth="1" position=".255 5.954 24.8" scale="3.3 .928 .497" static-body></a-box>
+			<a-box material="src: #wall; side: double;" width="15" height="15" depth="1" position="-24.7 5.896 -0.21" rotation="0 90 0" scale="3.3 .928 .497" static-body></a-box>
+			<a-box material="src: #wall; side: double;" width="7.5" height="15" depth="1" position="24.78 5.966 15.570" rotation="0 90 0" scale="2.516 .928 .497" static-body></a-box>
+			<a-box material="src: #wall; side: double;" width="7.5" height="15" depth="1" position="24.78 5.966 -15.570" rotation="0 90 0" scale="2.516 .928 .497" static-body></a-box>
+			<a-box material="src: #wall; side: double;" width="7.5" height="15" depth="1" position="24.78 9.628 0.040" rotation="0 90 0" scale="1.638 .437 .497" static-body></a-box>
 					 
 			 <!--Walls that make up the inner area of the house-->
-			 <a-box material="src: #wall; side: double;"
-					 width="7.5" height="15" depth="1"
-					 position=".255 5.954 12.11"
-					 rotation="0 90 0"
-					 scale="3.3 .928 .497"
-					 static-body></a-box>
-			 <a-box material="src: #wall; side: double;"
-					 width="7.5" height="15" depth="1"
-					 position="-9.03 5.966 -.10"
-					 rotation="0 0 0"
-					 scale="2.516 .928 .497"
-					 static-body></a-box>
-			 <a-box material="src: #wall; side: double;"
-					 width="7.5" height="15" depth="1"
-					 position="-21.4 10.02 -.10"
-					 rotation="0 0 0"
-					 scale=".8 .391 .392"
-					 static-body></a-box>
+			 <a-box material="src: #wall; side: double;" width="7.5" height="15" depth="1" position=".255 5.954 12.11" rotation="0 90 0" scale="3.3 .928 .497" static-body></a-box>
+			 <a-box material="src: #wall; side: double;" width="7.5" height="15" depth="1" position="-9.03 5.966 -.10" rotation="0 0 0" scale="2.516 .928 .497" static-body></a-box>
+			 <a-box material="src: #wall; side: double;" width="7.5" height="15" depth="1" position="-21.4 10.02 -.10" rotation="0 0 0" scale=".8 .391 .392" static-body></a-box>
 		</a-entity>
 		
 		<!--Resonant body that plays positional sound!-->
 		<a-resonance-room src-position="-10.8 .956 -10.2" src="audio/87.mp3" loop="true", autoplay="true", width="4" height="3" depth="3.8" helper="false"><a-resonance-room>
+		<!--Put a bounding box around the audio player. Weird glitch where the user teleports off of the map without it-->
 		
 		<!--Models for the inside of the house-->
 		<a-entity gltf-model="#bed" position="-9.12 0 8.232" rotation="0 90 0" scale=".06 .06 .06"></a-entity>
