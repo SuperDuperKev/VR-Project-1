@@ -12,10 +12,10 @@ AFRAME.registerComponent('resonance-room', {
     enabled: {default: true},
     src: {type: 'asset' },
     'src-position': {type: 'vec3', default: '0 0 0' },
-    width: {type: 'number', default: 2 },
-    height: {type: 'number', default: 2},
-    depth: {type: 'number', default: 2 },
-    helper: {type: 'boolean', default: false },
+    width: {type: 'number', default: 0 },
+    height: {type: 'number', default: 0},
+    depth: {type: 'number', default: 0 },
+    helper: {type: 'boolean', default: true },
     'left-wall': {default: 'brick-bare', oneOf: RESONANCE_MATERIAL},
     'right-wall': {default: 'brick-bare', oneOf: RESONANCE_MATERIAL},
     'front-wall': {default: 'brick-bare', oneOf: RESONANCE_MATERIAL},
@@ -150,7 +150,7 @@ AFRAME.registerComponent('resonance-room', {
       _helperEl.setAttribute('width', this.data.width);
       _helperEl.setAttribute('height', this.data.height);
       _helperEl.setAttribute('depth', this.data.depth);
-      _helperEl.setAttribute('wireframe', true);
+      _helperEl.setAttribute('wireframe', false);
       _helperEl.setAttribute('color', 'black');
       this.el.appendChild(_helperEl);
     }
@@ -173,7 +173,7 @@ AFRAME.registerComponent('resonance-room', {
     {
       let _helperEl = document.createElement('a-sphere');
       _helperEl.classList.add('resonance-source-helper');
-      _helperEl.setAttribute('radius', 0.2);
+      _helperEl.setAttribute('radius', 3);
       _helperEl.setAttribute('segments-width', 14);
       _helperEl.setAttribute('segments-height', 6);
       _helperEl.setAttribute('wireframe', true);
