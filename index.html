@@ -37,6 +37,7 @@
 			<img src="images/wallpaper.jpg" id="wall" crossorigin="anonymous">
 			<img src="images/space.jpg" id="skyTex" crossorigin="anonymous">
 			<img src="images/poster.jpeg" id="poster" crossorigin="anonymous">
+			<img src='images/lightswitch.jpg' id='switch' crossorigin="anonymous">
 			<a-asset-item id="bed" src="models/bed/scene.gltf">
 			<a-asset-item id="dog" src="models/dog/scene.gltf">
 			<a-asset-item id="tree" src="models/tree/scene.gltf">
@@ -125,6 +126,14 @@
 		<a-entity gltf-model="#dog" position="0 0 40" rotation="0 270 0" scale=".0015 .0015 .0015">
 			<a-animation attribute="rotation" dur="1000" from="0 270 0" to = "0 -270 0" repeat="indefinite"></a-animation>
 		</a-entity>
+	
+		<!--Setup lighting-->
+		<a-light type="directional" color="grey" position="-.5 1 1" angle="60" decay="1" intensity=".6" ></a-light>
+		<a-light type="ambient" color="grey" position="0 0 0" angle="60" decay="1" intensity="1" ></a-light>
+		
+		<!--Add light switch entity-->
+		<a-box material="src: #switch; side: double; repeat: 1 1" width="16" height="22" depth="1" position="12.26 1.8 -3.73" rotation="0 -90 0" scale=".024 .024 .024" static-body></a-box>
+		
 	</a-scene>
 </body>
 </html>
