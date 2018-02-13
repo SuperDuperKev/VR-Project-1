@@ -6,7 +6,7 @@
 	<meta name="author" content="Simon Woldemichael">
 	
 	<!--Include a-frame-->
-    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+	<script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
 	
 	<!--Include resonance dependencies-->
 	<script src="https://cdn.jsdelivr.net/npm/resonance-audio/build/resonance-audio.min.js"></script>
@@ -44,7 +44,7 @@
 			<a-asset-item id="computer" src="models/computer/scene.gltf">
 			<a-asset-item id="radio" src="models/radio/scene.gltf">
 			<a-asset-item id="phone" src="models/phone/scene.gltf">
-			<a-asset-item id="camera-drone" src="models/camera-drone/scene.gltf">
+			<a-asset-item id="robot" src="models/robot/scene.gltf">
 			<a-asset-item id="car" src="models/car/scene.gltf">
 			<a-asset-item id="couch" src="models/couch/scene.gltf">
 			<a-asset-item id="crt-tv" src="models/crt-tv/scene.gltf">
@@ -99,7 +99,7 @@
 		<!--Put a bounding box around the audio player. Weird glitch where the user teleports off of the map without it-->
 		
 		<!--Models for the inside of the house-->
-		<a-entity gltf-model="#bed" position="-9.12 0 8.232" rotation="0 90 0" scale=".06 .06 .06"></a-entity>
+		<a-entity gltf-model="#bed" position="-7.68 0 8.232" rotation="0 90 0" scale=".3 .3 .3"></a-entity>
 		<a-entity gltf-model="#table" position="-1.48 0 10.01" rotation="0 90 0"></a-entity>
 		<a-entity gltf-model="#table" position="-10.9 0 -10.1" rotation="0 90 0"></a-entity>
 		<a-entity gltf-model="#computer" position="-1.48 1.333 10.01" rotation="0 270 0" scale=".001 .001 .001"></a-entity>
@@ -110,6 +110,7 @@
 		<a-entity gltf-model="#couch" position="6.083 0 2.446" rotation="0 -90 0" scale=".504 .504 .504"></a-entity> 
 		<a-entity gltf-model="#crt-tv" position="6.083 0 10.31" rotation="0 180 0" scale="1 1 1"></a-entity>
 		<a-entity gltf-model="#gamecube" position="4.134 0 10.18" rotation="0 180 0" scale=".022 .022 .022 "></a-entity>
+		<!--Model #15 is a poster made by texturing a flat, primitive box-->
 		<a-box material="src: #poster; side: double; repeat: 1 1" width="16" height="22" depth="1" position=".215 3.163 5.121" rotation="0 -90 0" scale=".170 .170 .170" static-body></a-box>
 		
 		<!--Models for the outside of the house-->
@@ -117,10 +118,10 @@
 		<a-ocean width="20" depth="10" density="40" position="0 .25 40"></a-ocean>
 		
 		<a-entity gltf-model="#tree" position="8 0 40" rotation="0 90 0" scale=".05 .05 .05"></a-entity>
-		<a-entity gltf-model="#camera-drone" position="-13.6 7.209 41.24" rotation="-.22 -2.57 -37.7" scale=".005 .005 .005"></a-entity>
+		<a-entity gltf-model="#robot" position="-4.89 -1.78 39.54" scale=".040 .040 .040" rotation="0 -90 0"></a-entity>
 		<a-entity gltf-model="#car" position=".212 0 17.87" rotation="0 90 0"></a-entity>
 		
-		<!--Last model is a dynamic object-->
+		<!--This model is a dynamic object-->
 		<a-entity gltf-model="#dog" position="0 0 40" rotation="0 270 0" scale=".0015 .0015 .0015">
 			<a-animation attribute="rotation" dur="1000" from="0 270 0" to = "0 -270 0" repeat="indefinite"></a-animation>
 		</a-entity>
