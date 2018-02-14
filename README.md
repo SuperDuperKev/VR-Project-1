@@ -14,10 +14,10 @@
    - [x] Have appropriate lighting
  - For a B
    - [x] Add an additional 5 unique models
-   - [x] Give the use control over the lighting
+   - [x] Give the use control over the lighting (light switch within the scene)
    - [x] Be able to navigate around the space
  - For an A
-   - [x] Interact with certain objects
+   - [x] Interact with certain objects (Clickable sound player and box that spawns other boxes)
 	
 ### Planned timeline and sources as to how everything was achieved
 1) Add a skybox.
@@ -35,6 +35,7 @@
 5) Add 15 models to the scene
    - For simplicity, use .gltf format models (sources below)
    - [If needed, compress the number of faces on all of them in MeshLab](https://www.shapeways.com/tutorials/polygon_reduction_with_meshlab)
+   - *All* models should be below 800-900KB for mobile space optimization/efficiency
   
 6) Add an animation to a model to make it a dynamic object
    - [Example 1](https://blog.prototypr.io/learning-a-frame-how-to-do-animations-2aac1ae461da)
@@ -62,7 +63,7 @@
   - Table: https://sketchfab.com/models/28e73c5dd9674b349a0c7ba06fb34e1c
   - Phone: https://sketchfab.com/models/d77a5f2004004822b527edb8090fcbcf
   - Dog:  https://sketchfab.com/models/335f2250195c407bac91695fbdd193e1
-  - Camera drone: https://sketchfab.com/models/764eea3376134998bd49bb8e5f7d795e
+  - Robot: https://sketchfab.com/models/331bc62673a9416591c0bf6b186caa8c
   - Car: https://sketchfab.com/models/e6af23e051644eaabba1299709aa6f2b
   - Couch: https://sketchfab.com/models/0bbeae4fe59b4e44bed8d06f5cb415bf
   - CRT TV: https://sketchfab.com/models/5ab87913300f474a96b218b10c9ab3d4
