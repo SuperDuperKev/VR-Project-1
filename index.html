@@ -143,9 +143,9 @@
 			}
 		</script>
 		
-		<!--Resonant body that plays positional sound!-->
-		<!--This is counted as 1/15 models and is also a dynamic model since it can be clicked to pause/play the song-->
-		<a-resonance-room onclick="toggleRadio()" src-position="-92.6 10.57 -85.7" src="audio/87.mp3" scale=".118 .118 .118" loop="true" autoplay="true" class="intersectable"></a-resonance-room>
+		<!--A radio that only plays 1 song-->
+		<!--This is counted as model #14 and is also a dynamic model since it can be clicked to pause/play the song-->
+		<a-resonance-room onclick="toggleRadio()" src-position="-92.6 10.57 -85.7" src="audio/87.mp3" scale=".118 .118 .118" loop="true" autoplay="false" class="intersectable"></a-resonance-room>
 		
 		<!--Models for the inside of the house-->
 		<a-entity gltf-model="#bed" position="-7.68 0 8.232" rotation="0 90 0" scale=".3 .3 .3"></a-entity>
@@ -164,7 +164,7 @@
 		<a-box material="src: #poster; side: double; repeat: 1 1" width="16" height="22" depth="1" position=".215 3.163 5.121" rotation="0 -90 0" scale=".170 .170 .170" static-body></a-box>
 		
 		<!--Models for the outside of the house-->
-		<!--Sideyard swimming pool with wave generator-->
+		<!--Sideyard swimming pool with 'wave generator'-->
 		<a-ocean width="20" depth="10" density="40" position="0 .25 40"></a-ocean>
 		
 		<a-entity gltf-model="#robot" position="-4.89 -1.78 39.54" scale=".040 .040 .040" rotation="0 -90 0"></a-entity>
@@ -173,28 +173,35 @@
 		
 		<!--Setup lighting-->
 		<a-light type="directional" color="grey" position="-.5 1 1" angle="60" decay="1" intensity=".6" ></a-light>
-		<a-light id="main-light" type="ambient" color="white" position="0 0 0" angle="60" decay="1" intensity="1"></a-light>
+		<a-light id="house-light" type="ambient" color="white" position="0 0 0" angle="60" decay="1" intensity="1"></a-light>
 		
 		<!--Function that is called when the light switch is pressed-->
 		<script>
-			function setLightColor(){
-				var light = document.querySelector('#main-light');
-				var current_color = light.getAttribute('color');
-				if (current_color == 'grey'){
-					light.setAttribute('color', 'white');
-				}
-				else{
-					light.setAttribute('color', 'grey');
-				}
+			function setLightIntensity(){
+				var light = document.querySelector('#house-light');
+				var current_intensity = light.getAttribute('intensity');
+				console.log(current_intensity);
+				if(current_intensity == 1)
+					light.setAttribute('intensity', .5);
+				else if(current_intensity == .5)
+					light.setAttribute('intensity', .25);
+				else if(current_intensity == .25)
+					light.setAttribute('intensity', .145);
+				else if (current_intensity == .145)
+					light.setAttribute('intensity', .0725);
+				else if(current_intensity == .0725)
+					light.setAttribute('intensity', 0);
+				else
+					light.setAttribute('intensity', 1);
 			}
 		</script>
 		
 		<!--Add light switch entity-->
-		<a-box onclick="setLightColor()" material="src: #switch; side: double; repeat: 1 1" width="16" height="22" depth="1" position="12.26 1.8 -3.73" rotation="0 -90 0" scale=".024 .024 .024" static-body class="intersectable"></a-box>
+		<a-box onclick="setLightIntensity()" material="src: #switch; side: double; repeat: 1 1" width="16" height="22" depth="1" position="12.26 1.8 -3.73" rotation="0 -90 0" scale=".024 .024 .024" static-body class="intersectable"></a-box>
 		
 		<!--Function that is called when cool-box is sphere-->
 		<script>
-			function makeShape(){
+			function makeSphere(){
 				var colors = ['red', 'yellow', 'green', 'purple', 'pink', 'white', 'black', 'blue'];
 				var initial_radius = 1;
 				var box = document.querySelector('#cool-sphere');
@@ -210,8 +217,8 @@
 			}
 		</script>
 		
-		<!--For fun, add a cube that spawns cubes when you click it-->
-		<a-sphere onclick="makeShape()" id="cool-sphere"  material="src: #click;" static-body position="13.86 .507 -3.82" class="intersectable"></a-box>
+		<!--For fun, add a sphere that spawns spheres when you click it-->
+		<a-sphere onclick="makeSphere()" id="cool-sphere"  material="src: #click;" static-body position="13.86 .507 -3.82" class="intersectable"></a-box>
 		
 	</a-scene>
 </body>
