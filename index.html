@@ -23,6 +23,12 @@
 		var paused = false; // For sound toggle
 		var new_position = new Object({x: .052, y: .032, z: -1.49}); // For spawning more cubes
 		var color_count = 0; // For applying new colors to new cubes
+		
+		// Variables for positioning the door
+		var door_opened_position = new Object({x: 24.78, y: -3.14, z: .005});
+		var door_closed_position = new Object({x: 24.78, y: 3.128, z: .005});
+		var isOpened = false;
+		var isClosed = true;
 	</script>
 </head>
 
@@ -44,6 +50,7 @@
 			<img src="images/poster.jpeg" id="poster" crossorigin="anonymous">
 			<img src='images/lightswitch.jpg' id='switch' crossorigin="anonymous">
 			<img src='images/click.jpg' id='click' crossorigin="anonymous">
+			<img src='images/metal-door.png' id='myDoor' crossorigin="anonymous">
 			<a-asset-item id="bed" src="models/bed/scene.gltf">
 			<a-asset-item id="dog" src="models/dog/scene.gltf">
 			<a-asset-item id="tree" src="models/tree/scene.gltf">
@@ -94,11 +101,31 @@
 			<a-box material="src: #wall; side: double;" width="7.5" height="15" depth="1" position="24.78 5.966 15.570" rotation="0 90 0" scale="2.516 .928 .497" static-body></a-box>
 			<a-box material="src: #wall; side: double;" width="7.5" height="15" depth="1" position="24.78 5.966 -15.570" rotation="0 90 0" scale="2.516 .928 .497" static-body></a-box>
 			<a-box material="src: #wall; side: double;" width="7.5" height="15" depth="1" position="24.78 9.628 0.040" rotation="0 90 0" scale="1.638 .437 .497" static-body></a-box>
-					 
-			 <!--Walls that make up the inner area of the house-->
-			 <a-box material="src: #wall; side: double;" width="7.5" height="15" depth="1" position=".255 5.954 12.11" rotation="0 90 0" scale="3.3 .928 .497" static-body></a-box>
-			 <a-box material="src: #wall; side: double;" width="7.5" height="15" depth="1" position="-9.03 5.966 -.10" rotation="0 0 0" scale="2.516 .928 .497" static-body></a-box>
-			 <a-box material="src: #wall; side: double;" width="7.5" height="15" depth="1" position="-21.4 10.02 -.10" rotation="0 0 0" scale=".8 .391 .392" static-body></a-box>
+
+			<!--Function that is called when door below is clicked-->
+			<script>
+				function setDoor(){
+					var my_door = document.querySelector('#my_door');
+					if(isClosed){
+						my_door.setAttribute('position', door_opened_position);
+						isOpened = true;
+						isClosed = false;
+					}
+					else if(isOpened){
+						my_door.setAttribute('position', door_closed_position);
+						isOpened = false;
+						isClosed = true;
+					}
+				}
+			</script>
+			
+			<!--Dynamic door-->
+			<a-box id="my_door" onclick="setDoor()" material="src: #myDoor; side: double;" width="7.5" height="15" depth="1" position="24.78 3.128 0.005" rotation="0 90 0" scale="1.638 .437 .497" static-body  class="intersectable"></a-box>
+			
+			<!--Walls that make up the inner area of the house-->
+			<a-box material="src: #wall; side: double;" width="7.5" height="15" depth="1" position=".255 5.954 12.11" rotation="0 90 0" scale="3.3 .928 .497" static-body></a-box>
+			<a-box material="src: #wall; side: double;" width="7.5" height="15" depth="1" position="-9.03 5.966 -.10" rotation="0 0 0" scale="2.516 .928 .497" static-body></a-box>
+			<a-box material="src: #wall; side: double;" width="7.5" height="15" depth="1" position="-21.4 10.02 -.10" rotation="0 0 0" scale=".8 .391 .392" static-body></a-box>
 		</a-entity>
 		
 		<!--Function that is called when the radio is clicked-->
