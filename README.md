@@ -17,7 +17,7 @@
    - [x] Give the use control over the lighting (light switch within the scene)
    - [x] Be able to navigate around the space
  - For an A
-   - [x] Interact with certain objects (Clickable sound player and box that spawns other boxes)
+   - [x] Interact with certain objects (Clickable sound player, front door, and sphere that spawns dynamic-body spheres that are affected by gravity/physics)
 	
 ### Planned timeline and sources as to how everything was achieved
 1) Add a skybox.
@@ -68,10 +68,10 @@
   - Couch: https://sketchfab.com/models/0bbeae4fe59b4e44bed8d06f5cb415bf
   - CRT TV: https://sketchfab.com/models/5ab87913300f474a96b218b10c9ab3d4
   - GameCube: https://sketchfab.com/models/ff244730d22e4581a3f505201e63925e
-  - Amazon Echo: https://sketchfab.com/models/d09319ec6c8245f2bc7f20d96a4f328a
-  - Tree: https://sketchfab.com/models/7016d1d32fe748f0a8b3f5eb39374bc4
+  - Lamp: https://sketchfab.com/models/1a50b7ee150a45e583674cd319bb82eb
+  - Chair: https://sketchfab.com/models/ff8cb5a736494a84929199e111bfefd3
   - Pool table: https://sketchfab.com/models/625c012402074e91a1a534b771920a17
-  - Computer monitor: https://sketchfab.com/models/1cfebc1b09a54c0e96d87b7179237285
+  - Laptop: https://sketchfab.com/models/9a960986f0cc49f99a0afdfb486ec859
   - Bed: https://sketchfab.com/models/86d5c8b1addf4f138d8f0c2cf06e9ba0
 
 ### Video demonstration
