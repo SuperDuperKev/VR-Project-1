@@ -4,7 +4,8 @@
 ## Video demonstration
    - (Video embed here :soon:)
 
-## The web application can be found at http://swoldemi.me/VR-Project-1
+## Try it outer
+   - The web application can be found at http://swoldemi.me/VR-Project-1
    
 ## Project Report
 
