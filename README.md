@@ -45,12 +45,12 @@ var isClosed = true;
 ```
 
 ### Key features
-Physics: You are unable to walk through the walls of the home or any other objects that have the `static-body` attribute. Objects that are labled as `dynamic-body` are affected by physics (bounce, roll, move) and can be moved by the camera as well. These features are achieved by applying a `kinematic-body` to the camera and by including the [A-Frame Extras library](https://github.com/donmccurdy/aframe-extras)
+Physics: You are unable to walk through the walls of the home or any other objects that have the `static-body` attribute. Objects that are labelled as `dynamic-body` are affected by physics (bounce, roll, move) and can be moved by the camera as well. These features are achieved by applying a `kinematic-body` to the camera and by including the [A-Frame Extras library](https://github.com/donmccurdy/aframe-extras)
 
-Sky: The sky is achieved by using [Sky.js](https://github.com/swoldemi/VR-Project-1/blob/master/libs/sky.js). This script registers a shader, which is simply a sphere with a central light componenet that mocks a sun. Because the position of the sun is initially on the horizon and is not very bright, we need to set a new A-Frame component (found [here](https://github.com/swoldemi/VR-Project-1/blob/master/utils/sunSetter.js)) to position it.
+Sky: The sky is achieved by using [Sky.js](https://github.com/swoldemi/VR-Project-1/blob/master/libs/sky.js). This script registers a shader, which is simply a sphere with a central light component that mocks a sun. Because the position of the sun is initially on the horizon and is not very bright, we need to set a new A-Frame component (found [here](https://github.com/swoldemi/VR-Project-1/blob/master/utils/sunSetter.js)) to position it.
 
 ### Dynamic features/interactables
-For objects to be clickable, a `raycaster` entity must be encapsulated within the camera. View the code for this [here](https://github.com/swoldemi/VR-Project-1/blob/master/index.html#L90). The entity is then defined as a `.intersectable` object. All objects that you would like to be intersectable (eligible for onclick events) must then "extend" (or something similiar to that") this object by applying the attribute `class="intersectable"`. For example for the light switch's primitive box, to be elegible for an onclick event that is tracked by the raycaster, should look like:
+For objects to be clickable, a `raycaster` entity must be encapsulated within the camera. View the code for this [here](https://github.com/swoldemi/VR-Project-1/blob/master/index.html#L90). The entity is then defined as a `.intersectable` object. All objects that you would like to be intersectable (eligible for onclick events) must then "extend" (or something similar to that") this object by applying the attribute `class="intersectable"`. For example for the light switch's primitive box, to be eligible for an onclick event that is tracked by the raycaster, should look like:
 
 ```HTML
 <a-box onclick="setLightIntensity()" 
@@ -172,7 +172,7 @@ function toggleRadio(){
    - [x] Have appropriate lighting
  - For a B
    - [x] Add an additional 5 unique models
-   - [x] Give the use control over the lighting (light switch within the scene)
+   - [x] Give the user control over the lighting (light switch within the scene)
    - [x] Be able to navigate around the space
  - For an A
    - [x] Interact with certain objects (Clickable sound player, light switch, front door, and sphere that spawns dynamic-body spheres that are affected by gravity/physics)
@@ -212,7 +212,7 @@ function toggleRadio(){
    - Stopping and playing the radio is achieved using the same concepts applied to control lighting
 
 10) Add text instruction to the scene so the user knows that existence of some features
-   - [Use text components (<a-text></a-text>)](https://aframe.io/docs/0.7.0/components/text.html)
+     - [Use text components](https://aframe.io/docs/0.7.0/components/text.html)
    
 11) Helpful sources
     - https://github.com/donmccurdy/aframe-extras/issues/149
