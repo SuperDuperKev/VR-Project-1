@@ -4,7 +4,7 @@
 ## Video demonstration
    - (Video embed here :soon:)
 
-## Try it outer
+## Try it out
    - The web application can be found at http://swoldemi.me/VR-Project-1
    
 ## Project Report
@@ -29,8 +29,9 @@
 
 ### Work Distribution
  - Individual project
+***
 
-In the JavaScript functions explained below, the following global variables (declared in the HTML head) are used for simplicity
+In the JavaScript functions explained below, the following global variables (declared in the HTML head) are used for simplicity:
 ```javascript
 var paused = false; // For sound toggle
 var new_position = new Object({x: .052, y: .032, z: -1.49}); // For spawning more cubes
@@ -44,9 +45,28 @@ var isClosed = true;
 ```
 
 ### Key features
-Physics: You are unable to walk through the walls of the home or any other objects that have the `static-body` attribute. Objects that are labled as `dynamic-body` are affected by physics (bounce, roll, move) and can be moved by the camera as well. These features are achieved by applying a `kinematic-body` to the camera.
+Physics: You are unable to walk through the walls of the home or any other objects that have the `static-body` attribute. Objects that are labled as `dynamic-body` are affected by physics (bounce, roll, move) and can be moved by the camera as well. These features are achieved by applying a `kinematic-body` to the camera and by including the [A-Frame Extras library](https://github.com/donmccurdy/aframe-extras)
+
+Sky: The sky is achieved by using [Sky.js](https://github.com/swoldemi/VR-Project-1/blob/master/libs/sky.js). This script registers a shader, which is simply a sphere with a central light componenet that mocks a sun. Because the position of the sun is initially on the horizon and is not very bright, we need to set a new A-Frame component (found [here](https://github.com/swoldemi/VR-Project-1/blob/master/utils/sunSetter.js)) to position it.
 
 ### Dynamic features/interactables
+For objects to be clickable, a `raycaster` entity must be encapsulated within the camera. View the code for this [here](https://github.com/swoldemi/VR-Project-1/blob/master/index.html#L90). The entity is then defined as a `.intersectable` object. All objects that you would like to be intersectable (eligible for onclick events) must then "extend" (or something similiar to that") this object by applying the attribute `class="intersectable"`. For example for the light switch's primitive box, to be elegible for an onclick event that is tracked by the raycaster, should look like:
+
+```HTML
+<a-box onclick="setLightIntensity()" 
+		material="src: #switch; side: double; repeat: 1 1"
+		width="16" height="22" 
+		depth="1" 
+		position="12.26 1.8 -3.73" 
+		rotation="0 -90 0" 
+		scale=".024 .024 .024" 
+		static-body 
+		class="intersectable">
+</a-box>
+```
+Continuing the example, when the light switch is clicked, the function `setLightIntensity()`.
+
+***
 Clicking on the door at the front of the house allows you to walk through the door. Because the door is a `static-body` and the camera is a `kinematic-body` you cannot walk through the door without opening it. 
 
 ![Feature 1: A clickable door](./images/screenshots/dynamic_object1.gif)
@@ -155,7 +175,7 @@ function toggleRadio(){
    - [x] Give the use control over the lighting (light switch within the scene)
    - [x] Be able to navigate around the space
  - For an A
-   - [x] Interact with certain objects (Clickable sound player, front door, and sphere that spawns dynamic-body spheres that are affected by gravity/physics)
+   - [x] Interact with certain objects (Clickable sound player, light switch, front door, and sphere that spawns dynamic-body spheres that are affected by gravity/physics)
 
 ### Planned timeline and sources as to how everything was achieved
 1) Add a skybox.
