@@ -2,8 +2,7 @@
 ## Due: February 20, 2018
 
 ## Video demonstration
-   - (Video embed here :soon:)
-
+   - On my YouTube channel: https://www.youtube.com/watch?v=IPB3wdwSTVM
 ## Try it out
    - The web application can be found at http://swoldemi.me/VR-Project-1
    
