@@ -211,7 +211,10 @@ function toggleRadio(){
    - [Resonant bodies play positional sound (really cool)](https://github.com/etiennepinchon/aframe-resonance)
    - Stopping and playing the radio is achieved using the same concepts applied to control lighting
 
-10) Helpful sources
+10) Add text instruction to the scene so the user knows that existence of some features
+   - [Use text components (<a-text></a-text>)](https://aframe.io/docs/0.7.0/components/text.html)
+   
+11) Helpful sources
     - https://github.com/donmccurdy/aframe-extras/issues/149
     - https://stackoverflow.com/questions/42087566/add-speed-to-wasd-controls-for-a-frame
     - https://stackoverflow.com/questions/41669122/how-do-i-copy-the-position-and-rotation-of-a-camera-child-a-frame-entity-to-use
