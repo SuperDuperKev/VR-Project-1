@@ -65,14 +65,18 @@
 			<a-asset-item id="lamp" src="models/lamp/scene.gltf">
 		</a-assets>
 		
-		<!--Text objects that are used for instructions-->
-		<a-text id="instruction1" side="double" color="black" position="14.13 1.901 -2.23" scale="1 1 1" rotation="0 90 0" value="Click this sphere for something cool!"></a-text>
-		<a-text id="instruction2" side="double" color="black" position="12.19 2.653 -5.38" scale="1 1 1" rotation="0 270 0" value="Click the light switch\n to change the intensity\n of the light."></a-text>
-		<a-text id="instruction3" side="double" color="black" position="13.85 1.434 0.717" scale="1 1 1" rotation="0 90 0" value="Click the door\n to open it."></a-text>
-		<a-text id="instruction4" side="double" color="black" position="-11.2 2.149 -7.89" scale="1 1 1" rotation="0 90 0" value="Click this sphere\n to pause or play music."></a-text>
-		<a-text id="instruction5" side="double" color="black" position="18.98 1.434 2.276" scale="1 1 1" rotation="0 90 0" value="Controls:\n     Phone - Tap screen to move. Tap screen to interact. Rotate gyroscope to look around\n     Desktops - WASD to move. Mouse click to interact. Mouse movement to look around."></a-text>
 		
-		<!--The sky that exists outside of the sphere that houses a skybox-->
+		<!--My project header-->
+		<a-text id="me" side="double" color="black" position="5.846 14.09 32.85" scale="6 6 6" rotation="0 90 0" value="CS 4331-002 \nSpecial Topics in CS\nVirtual Reality\nSimon Woldemichael - Project 1\n" font="dejavu"></a-text>
+		
+		<!--Text objects that are used for instructions-->
+		<a-text id="instruction1" side="double" color="black" position="14.13 1.901 -2.23" scale="1 1 1" rotation="0 90 0" value="Click this sphere for something cool!" font="dejavu"></a-text>
+		<a-text id="instruction2" side="double" color="black" position="12.19 2.653 -6.38" scale="1 1 1" rotation="0 270 0" value="Click the light switch\n to change the intensity\n of the light." font="dejavu"></a-text>
+		<a-text id="instruction3" side="double" color="black" position="13.85 1.434 0.717" scale="1 1 1" rotation="0 90 0" value="Click the door\n to open and close it." font="dejavu"></a-text>
+		<a-text id="instruction4" side="double" color="black" position="-11.2 2.149 -7.89" scale="1 1 1" rotation="0 90 0" value="Click this sphere\n to pause or play music." font="dejavu"></a-text>
+		<a-text id="instruction5" side="double" color="black" position="18.98 1.434 2.276" scale="1 1 1" rotation="0 90 0" value="Controls:\n     Phone - Tap screen to move. Tap screen to interact. Rotate gyroscope to look around\n     Desktops - WASD to move. Mouse click to interact. Mouse movement to look around." font="dejavu"></a-text>
+		
+		<!--The sky that exists outside of the sphere that houses another skybox-->
 		<a-sky src="#skyTex" repeat="1 1"></a-sky>
 		
 		<!--Load the sky and bind the sunSetter to it-->
@@ -134,7 +138,7 @@
 			<a-box material="src: #wall; side: double;" width="7.5" height="15" depth="1" position="-21.4 10.02 -.10" rotation="0 0 0" scale=".8 .391 .392" static-body></a-box>
 		</a-entity>
 		
-		<!--Function that is called when the radio is clicked-->
+		<!--Function that is called when the radio below is clicked-->
 		<script>
 			function toggleRadio(){
 				var radio = document.querySelector('a-resonance-room');
@@ -181,7 +185,7 @@
 		<a-light type="directional" color="grey" position="-.5 1 1" angle="60" decay="1" intensity=".6" ></a-light>
 		<a-light id="house-light" type="ambient" color="white" position="0 0 0" angle="60" decay="1" intensity="1"></a-light>
 		
-		<!--Function that is called when the light switch is pressed-->
+		<!--Function that is called when the light switch below is pressed-->
 		<script>
 			function setLightIntensity(){
 				var light = document.querySelector('#house-light');
@@ -205,7 +209,7 @@
 		<!--Add light switch entity-->
 		<a-box onclick="setLightIntensity()" material="src: #switch; side: double; repeat: 1 1" width="16" height="22" depth="1" position="12.26 1.8 -3.73" rotation="0 -90 0" scale=".024 .024 .024" static-body class="intersectable"></a-box>
 		
-		<!--Function that is called when cool-box is sphere-->
+		<!--Function that is called when cool-sphere (below) is clicked-->
 		<script>
 			function makeSphere(){
 				var colors = ['red', 'yellow', 'green', 'purple', 'pink', 'white', 'black', 'blue'];
