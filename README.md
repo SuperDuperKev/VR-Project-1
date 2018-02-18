@@ -42,7 +42,7 @@ var isClosed = true;
 Physics: You are unable to walk through the walls of the home or any other objects that have the `static-body` attribute. Objects that are labled as `dynamic-body` are affected by physics (bounce, roll, move) and can be moved by the camera as well. These features are achieved by applying a `kinematic-body` to the camera.
 
 ### Dynamic features/interactables
-![Feature 1: A clickable door](./screenshots/dynamic_object1.gif)
+![Feature 1: A clickable door](./images/screenshots/dynamic_object1.gif)
 
 Clicking on the door at the front of the house allows you to walk through the door
 
@@ -68,7 +68,7 @@ function setLightIntensity(){
 }
 ```
 
-![Feature 2: Dynamic sphere spawner](./screenshots/dynamic_object2.gif)
+![Feature 2: Dynamic sphere spawner](./images/screenshots/dynamic_object2.gif)
 
 Clicking on the sphere located in front of the door will spawn a sphere (1 per click) and these spheres can be rolled around by walking forward into them.
 
@@ -91,11 +91,11 @@ function makeSphere(){
 }
 ```
 
-![Feature 3: Collision](./screenshots/collision_feature.gif)
+![Feature 3: Collision](./images/screenshots/collision_feature.gif)
 
 Because the spheres that are spawned have the `dynamic-body` attribute, they, like the camera, do not clip through the camera.
 
-![Feature 4: Lightswitch](./screenshots/lightswitch.gif)
+![Feature 4: Lightswitch](./images/screenshots/lightswitch.gif)
 
 Clicking on a lightswitch located within the house will control the lighting in the scene.
 
