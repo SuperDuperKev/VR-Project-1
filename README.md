@@ -1,4 +1,4 @@
-# CS 4331-001 - Virtual Reality Project 1
+# CS 4331-002 - Virtual Reality Project 1
 ## Due: February 20, 2018
 
 ## Video demonstration
@@ -12,13 +12,17 @@
   - The basics of Three.js and A-Frame
   - How to bind objects to JavaScript functions (using onlick="functionName()")
   - How the Document Object Model works (DOM)
-  - Front-end design techniques that greatly take into consideration UX results
+  - Front-end design techniques that greatly take into consideration UX
   - How to manipulate 3-D `.gltf` models
   - General JavaScript library usage
   - How to use Chrome's web development tools
   - The meta of WebVR and the existence of cool online virtual reality applications
   - The I do not enjoy front-end development
 
+### Biggest issues
+  - I was mostly worried about my scene not running smoothly on a mobile device. To compensate for this I made sure to keep my models small and use primitive models where I could.
+  - Library collision - certain libraries set contradictive variables within one another and this would cause problems with the applications as a whole. For example, the A-Frame Extras Plugin would instantiate movement controls that were supported on a desktop but not on a mobile phone. 
+  
 ### Contributors
  - Individual project; All work was completed by Simon Woldemichael.
 
@@ -42,11 +46,11 @@ var isClosed = true;
 Physics: You are unable to walk through the walls of the home or any other objects that have the `static-body` attribute. Objects that are labled as `dynamic-body` are affected by physics (bounce, roll, move) and can be moved by the camera as well. These features are achieved by applying a `kinematic-body` to the camera.
 
 ### Dynamic features/interactables
+Clicking on the door at the front of the house allows you to walk through the door. Because the door is a `static-body` and the camera is a `kinematic-body` you cannot walk through the door without opening it. 
+
 ![Feature 1: A clickable door](./images/screenshots/dynamic_object1.gif)
 
-Clicking on the door at the front of the house allows you to walk through the door
-
-This is achieved with the `setLightIntensity()` Javscript function (below). Using the `querySelector` we select the id of the textured box that acts as a door (or gate) and when that box is clicked we set the position of the boxed. These are stored in `door_opened_position` and `door_closed_position`.
+The opening and closing of the door on click is achieved with the `setLightIntensity()` JavaScript function (below). Using the `querySelector` we select the id of the textured box that acts as a door (or gate) and when that box is clicked we set the position of the boxed. These are stored in `door_opened_position` and `door_closed_position`.
 
 ```javascript
 function setLightIntensity(){
@@ -67,12 +71,12 @@ function setLightIntensity(){
 		light.setAttribute('intensity', 1);
 }
 ```
+***
+Clicking on the sphere located in front of the door will spawn a sphere (1 per click) and these spheres can be rolled around by walking forward into them.
 
 ![Feature 2: Dynamic sphere spawner](./images/screenshots/dynamic_object2.gif)
 
-Clicking on the sphere located in front of the door will spawn a sphere (1 per click) and these spheres can be rolled around by walking forward into them.
-
-This is achieved with the `makeSphere()` Javscript function (below). Using the `querySelector` we select the id of the initial sphere that is clicked and append children to this sphere *each time* _any_ of the children or the parent are clicked. Using `make_box.setAttribute('dynamic-body', true)` the spheres become physical objects.
+This is achieved with the `makeSphere()` JavaScript function (below). Using the `querySelector` we select the id of the initial sphere that is clicked and append children to this sphere *each time* _any_ of the children or the parent are clicked. Using `make_box.setAttribute('dynamic-body', true)` the spheres become physical objects.
 
 ```javascript
 function makeSphere(){
@@ -90,16 +94,16 @@ function makeSphere(){
 	box.appendChild(make_box);
 }
 ```
+***
+Because the spheres that are spawned have the `dynamic-body` attribute, they, like the camera, do not clip through the camera.
 
 ![Feature 3: Collision](./images/screenshots/collision_feature.gif)
-
-Because the spheres that are spawned have the `dynamic-body` attribute, they, like the camera, do not clip through the camera.
+***
+Clicking on a lightswitch located within the house will control the lighting in the scene.
 
 ![Feature 4: Lightswitch](./images/screenshots/lightswitch.gif)
 
-Clicking on a lightswitch located within the house will control the lighting in the scene.
-
-This is achieved with the `setLightIntensity()` Javscript function (below). Using the `querySelector` we select the id of the main light in the scene, get the current intensity each time the light switch is clicked and depending on the current intensity, set a new intensity.
+This is achieved with the `setLightIntensity()` Javascript function (below). Using the `querySelector` we select the id of the main light in the scene, get the current intensity each time the light switch is clicked and depending on the current intensity, set a new intensity.
 
 ```javascript
 function setLightIntensity(){
@@ -120,7 +124,26 @@ function setLightIntensity(){
 		light.setAttribute('intensity', 1);
 }
 ```
+***
+In the rear of the home, there is a wireframe sphere that acts as a position sound player. This means, depending on where you are in the scene, the volume will be loud or quiet.
+ 
+![Feature 5: Sound player](./images/screenshots/soundplayer.png)
 
+Clicking on the sphere will toggle the songs playing state. This is achieved with the `toggleRadio()` JavaScript function (below). The song played is "87" by the band Polyphia. 
+```javascript
+function toggleRadio(){
+	var radio = document.querySelector('a-resonance-room');
+	if(!paused){
+		radio.audioEl.pause();
+		paused = true;
+	}
+	else{
+		radio.audioEl.play();
+		paused = false;
+	}
+}
+```
+***
 ### Grade Requirements
  - For a C
    - [x] Customize your dream house with your own style of floor and ceiling
@@ -161,13 +184,13 @@ function setLightIntensity(){
 8) Remove default lighting to give the user control over lighting
    - [Example 1](https://aframe.io/docs/0.7.0/introduction/javascript-events-dom-apis.html)
    - This is achieved by following [very basic DOM concepts](https://aframe.io/docs/0.7.0/introduction/javascript-events-dom-apis.html)
-   - When the user clicks on a 'light switch', the lighting within the room will to and from grey and white
+   - When the user clicks on a 'light switch', the `intensity` attribute of the light will be increased or decreased depending on its current intensity
 
 9) Add a music player or radio of some sort and allow the user to stop and play the song
    - [Resonant bodies play positional sound (really cool)](https://github.com/etiennepinchon/aframe-resonance)
    - Stopping and playing the radio is achieved using the same concepts applied to control lighting
 
-10) Helpful sources:
+10) Helpful sources
     - https://github.com/donmccurdy/aframe-extras/issues/149
     - https://stackoverflow.com/questions/42087566/add-speed-to-wasd-controls-for-a-frame
     - https://stackoverflow.com/questions/41669122/how-do-i-copy-the-position-and-rotation-of-a-camera-child-a-frame-entity-to-use
