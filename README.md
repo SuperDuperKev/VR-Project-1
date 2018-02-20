@@ -17,7 +17,7 @@
   - General JavaScript library usage
   - How to use Chrome's web development tools
   - The meta of WebVR and the existence of cool online virtual reality applications
-  - The I do not enjoy front-end development
+  - That I do not enjoy front-end development
 
 ### Biggest issues
   - I was mostly worried about my scene not running smoothly on a mobile device. To compensate for this I made sure to keep my models small and use primitive models where I could.
@@ -44,7 +44,7 @@ var isClosed = true;
 ```
 
 ### Key features
-Physics: You are unable to walk through the walls of the home or any other objects that have the `static-body` attribute. Objects that are labelled as `dynamic-body` are affected by physics (bounce, roll, move) and can be moved by the camera as well. These features are achieved by applying a `kinematic-body` to the camera and by including the [A-Frame Extras library](https://github.com/donmccurdy/aframe-extras)
+Physics: You are unable to walk through the walls of the home or any other objects that have the `static-body` attribute. Objects that are labelled as `dynamic-body` are affected by physics (bounce, roll, move) and can be moved by the camera as well. These features are achieved by applying a `kinematic-body` to the camera and by including the [A-Frame Extras library](https://github.com/donmccurdy/aframe-extras).
 
 Sky: The sky is achieved by using [Sky.js](https://github.com/swoldemi/VR-Project-1/blob/master/libs/sky.js). This script registers a shader, which is simply a sphere with a central light component that mocks a sun. Because the position of the sun is initially on the horizon and is not very bright, we need to set a new A-Frame component (found [here](https://github.com/swoldemi/VR-Project-1/blob/master/utils/sunSetter.js)) to position it.
 
@@ -70,7 +70,7 @@ Clicking on the door at the front of the house allows you to walk through the do
 
 ![Feature 1: A clickable door](./images/screenshots/dynamic_object1.gif)
 
-The opening and closing of the door on click is achieved with the `setLightIntensity()` JavaScript function (below). Using the `querySelector` we select the id of the textured box that acts as a door (or gate) and when that box is clicked we set the position of the boxed. These are stored in `door_opened_position` and `door_closed_position`.
+The opening and closing of the door on click is achieved with the `setLightIntensity()` JavaScript function (below). Using the `querySelector` we select the id of the textured box that acts as a door (or gate) and when that box is clicked we set the position of the boxed. These are stored in `door_opened_position` and `door_closed_position`. You might be wondering why I used such an unconventional door. Well, I'm of course preparent for nuclear fallout.
 
 ```javascript
 function setDoorPosition(){
@@ -111,7 +111,7 @@ function makeSphere(){
 }
 ```
 ***
-Because the spheres that are spawned have the `dynamic-body` attribute, they, like the camera, do not clip through the camera.
+Because the spheres that are spawned have the `dynamic-body` attribute, they, like the camera, do not clip through `static-body` entities or the camera.
 
 ![Feature 3: Collision](./images/screenshots/collision_feature.gif)
 ***
@@ -227,6 +227,7 @@ Continuing to my bedroom. Here you'll find a simple bed model and a desk contain
     - https://github.com/donmccurdy/aframe-extras/issues/149
     - https://stackoverflow.com/questions/42087566/add-speed-to-wasd-controls-for-a-frame
     - https://stackoverflow.com/questions/41669122/how-do-i-copy-the-position-and-rotation-of-a-camera-child-a-frame-entity-to-use
+	- [The initial example presented by the TA](https://github.com/Alex-Nguyen/CS5331001-Virtual-Reality/blob/master/index.html)
 
 ### External model sources
   1) Radio: https://sketchfab.com/models/e7172544d7984d3b8b7ac0cc6c9ae693
