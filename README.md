@@ -73,22 +73,18 @@ Clicking on the door at the front of the house allows you to walk through the do
 The opening and closing of the door on click is achieved with the `setLightIntensity()` JavaScript function (below). Using the `querySelector` we select the id of the textured box that acts as a door (or gate) and when that box is clicked we set the position of the boxed. These are stored in `door_opened_position` and `door_closed_position`.
 
 ```javascript
-function setLightIntensity(){
-	var light = document.querySelector('#house-light');
-	var current_intensity = light.getAttribute('intensity');
-	console.log(current_intensity);
-	if(current_intensity == 1)
-		light.setAttribute('intensity', .5);
-	else if(current_intensity == .5)
-		light.setAttribute('intensity', .25);
-	else if(current_intensity == .25)
-		light.setAttribute('intensity', .145);
-	else if (current_intensity == .145)
-		light.setAttribute('intensity', .0725);
-	else if(current_intensity == .0725)
-		light.setAttribute('intensity', 0);
-	else
-		light.setAttribute('intensity', 1);
+function setDoorPosition(){
+	var my_door = document.querySelector('#my_door');
+	if(isClosed){
+		my_door.setAttribute('position', door_opened_position);
+		isOpened = true;
+		isClosed = false;
+	}
+	else if(isOpened){
+		my_door.setAttribute('position', door_closed_position);
+		isOpened = false;
+		isClosed = true;
+	}
 }
 ```
 ***
@@ -145,7 +141,7 @@ function setLightIntensity(){
 }
 ```
 ***
-In the rear of the home, there is a wireframe sphere that acts as a position sound player. This means, depending on where you are in the scene, the volume will be loud or quiet.
+In the rear of the home, there is a wireframe sphere that acts as a position sound player. This means, depending on where you are in the scene, the volume will be loud or quiet. The wireframe is considered to be model # *14*.
  
 ![Feature 5: Sound player](./images/screenshots/soundplayer.png)
 
@@ -166,16 +162,17 @@ function toggleRadio(){
 The walls of the home are made of `static-body` planes that have been textured with an image. The unconventional image is a result of the fact that I'd like to live in a home just with a similar, artistic texturing someday :)
 ![Screenshot: Walls](./images/screenshots/walls.JPG)
 
-The following screenshot shows the side area (yard) of the home. It contains a dog and a large robot. I'd like to own both someday.
+The following screenshot shows the side area (yard) of the home. It contains a car, a dog, and a large robot. I'd like to own both someday.
 ![Screenshot: Sideyard](./images/screenshots/sideyard.JPG)
 
-Next is my living room. You might be wondering why I'm using such an archaic television. Well, CRT (Cathode ray tube) televeisions actually are much more responsive than modern plasma, high-res TVs and have much less input latency when playing high APM (Actions Per Minute) video games. In on the rear wall, you'll find a poster for the movie *Ready Player One*. 
+Next is my living room. You might be wondering why I'm using such an archaic television. Well, CRT (Cathode ray tube) televeisions actually are much more responsive than modern plasma, high-res TVs and have much less input latency when playing high APM (Actions Per Minute) video games. In on the rear wall, you'll find a poster for the movie *Ready Player One*. The poster is model # *15*.
 ![Screenshot: Livingrooom](./images/screenshots/livingroom.JPG)
 
 Continuing to my bedroom. Here you'll find a simple bed model and a desk containing a laptop, lamp, and cell phone. All of these these are necessities.
-![Screenshot: Bedroom](./images/screenshots/livingroom.JPG)
+![Screenshot: Bedroom](./images/screenshots/bedroom.JPG)
 ![Screenshot: Desk](./images/screenshots/workarea.JPG)
 
+*There is 1 hidden Easter Egg in the scene that involves gravity. It's not very hidden but it's worth finding out!* :egg:
 ***
 ### Grade Requirements
  - For a C
