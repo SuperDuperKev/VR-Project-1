@@ -162,7 +162,7 @@ function toggleRadio(){
 The walls of the home are made of `static-body` planes that have been textured with an image. The unconventional image is a result of the fact that I'd like to live in a home just with a similar, artistic texturing someday :)
 ![Screenshot: Walls](./images/screenshots/walls.JPG)
 
-The following screenshot shows the side area (yard) of the home. It contains a car, a dog, and a large robot. I'd like to own both someday.
+The following screenshot shows the side area (yard) of the home. It contains a car, a dog, and a large robot. I'd like to own all three someday.
 ![Screenshot: Sideyard](./images/screenshots/sideyard.JPG)
 
 Next is my living room. You might be wondering why I'm using such an archaic television. Well, CRT (Cathode ray tube) televeisions actually are much more responsive than modern plasma, high-res TVs and have much less input latency when playing high APM (Actions Per Minute) video games. In on the rear wall, you'll find a poster for the movie *Ready Player One*. The poster is model # *15*.
@@ -229,17 +229,17 @@ Continuing to my bedroom. Here you'll find a simple bed model and a desk contain
     - https://stackoverflow.com/questions/41669122/how-do-i-copy-the-position-and-rotation-of-a-camera-child-a-frame-entity-to-use
 
 ### External model sources
-  - Radio: https://sketchfab.com/models/e7172544d7984d3b8b7ac0cc6c9ae693
-  - Table: https://sketchfab.com/models/28e73c5dd9674b349a0c7ba06fb34e1c
-  - Phone: https://sketchfab.com/models/d77a5f2004004822b527edb8090fcbcf
-  - Dog:  https://sketchfab.com/models/335f2250195c407bac91695fbdd193e1
-  - Robot: https://sketchfab.com/models/331bc62673a9416591c0bf6b186caa8c
-  - Car: https://sketchfab.com/models/e6af23e051644eaabba1299709aa6f2b
-  - Couch: https://sketchfab.com/models/0bbeae4fe59b4e44bed8d06f5cb415bf
-  - CRT TV: https://sketchfab.com/models/5ab87913300f474a96b218b10c9ab3d4
-  - GameCube: https://sketchfab.com/models/ff244730d22e4581a3f505201e63925e
-  - Lamp: https://sketchfab.com/models/1a50b7ee150a45e583674cd319bb82eb
-  - Chair: https://sketchfab.com/models/ff8cb5a736494a84929199e111bfefd3
-  - Pool table: https://sketchfab.com/models/625c012402074e91a1a534b771920a17
-  - Laptop: https://sketchfab.com/models/9a960986f0cc49f99a0afdfb486ec859
-  - Bed: https://sketchfab.com/models/86d5c8b1addf4f138d8f0c2cf06e9ba0
+  1) Radio: https://sketchfab.com/models/e7172544d7984d3b8b7ac0cc6c9ae693
+  1) Table: https://sketchfab.com/models/28e73c5dd9674b349a0c7ba06fb34e1c
+  1) Phone: https://sketchfab.com/models/d77a5f2004004822b527edb8090fcbcf
+  1) Dog:  https://sketchfab.com/models/335f2250195c407bac91695fbdd193e1
+  1) Robot: https://sketchfab.com/models/331bc62673a9416591c0bf6b186caa8c
+  1) Car: https://sketchfab.com/models/e6af23e051644eaabba1299709aa6f2b
+  1) Couch: https://sketchfab.com/models/0bbeae4fe59b4e44bed8d06f5cb415bf
+  1) CRT TV: https://sketchfab.com/models/5ab87913300f474a96b218b10c9ab3d4
+  1) GameCube: https://sketchfab.com/models/ff244730d22e4581a3f505201e63925e
+  1) Lamp: https://sketchfab.com/models/1a50b7ee150a45e583674cd319bb82eb
+  1) Chair: https://sketchfab.com/models/ff8cb5a736494a84929199e111bfefd3
+  1) Pool table: https://sketchfab.com/models/625c012402074e91a1a534b771920a17
+  1) Laptop: https://sketchfab.com/models/9a960986f0cc49f99a0afdfb486ec859
+  1) Bed: https://sketchfab.com/models/86d5c8b1addf4f138d8f0c2cf06e9ba0
