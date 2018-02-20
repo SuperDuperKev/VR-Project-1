@@ -163,6 +163,19 @@ function toggleRadio(){
 	}
 }
 ```
+The walls of the home are made of `static-body` planes that have been textured with an image. The unconventional image is a result of the fact that I'd like to live in a home just with a similar, artistic texturing someday :)
+![Screenshot: Walls](./images/screenshots/walls.JPG)
+
+The following screenshot shows the side area (yard) of the home. It contains a dog and a large robot. I'd like to own both someday.
+![Screenshot: Sideyard](./images/screenshots/sideyard.JPG)
+
+Next is my living room. You might be wondering why I'm using such an archaic television. Well, CRT (Cathode ray tube) televeisions actually are much more responsive than modern plasma, high-res TVs and have much less input latency when playing high APM (Actions Per Minute) video games. In on the rear wall, you'll find a poster for the movie *Ready Player One*. 
+![Screenshot: Livingrooom](./images/screenshots/livingroom.JPG)
+
+Continuing to my bedroom. Here you'll find a simple bed model and a desk containing a laptop, lamp, and cell phone. All of these these are necessities.
+![Screenshot: Bedroom](./images/screenshots/livingroom.JPG)
+![Screenshot: Desk](./images/screenshots/workarea.JPG)
+
 ***
 ### Grade Requirements
  - For a C
